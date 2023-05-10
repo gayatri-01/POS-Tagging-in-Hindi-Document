@@ -143,19 +143,19 @@ for sentence in input_file.readlines():
             fout.write(word[j] + "/" + tag[j] + " ")
 
 
-# predicted = codecs.open("outputs/hmmoutput.txt", mode ='r', encoding="utf-8")
-# expected = codecs.open("test_data/test_tagged.txt", mode ='r', encoding="utf-8")
+predicted = codecs.open("outputs/hmmoutput.txt", mode ='r', encoding="utf-8")
+expected = codecs.open("test_data/test_tagged.txt", mode ='r', encoding="utf-8")
 
-# c = 0
-# total = 0
-# for line in predicted.readlines():
-#     u = line.split(" ")
-#     total += len(u)
-#     a = expected.readline().split(" ")
-#     for i in range(len(u)):
-#         if(a[i]!=u[i]):
-#             c+=1
+c = 0
+total = 0
+for line in predicted.readlines():
+    u = line.split(" ")
+    total += len(u)
+    a = expected.readline().split(" ")
+    for i in range(len(u)):
+        if(a[i]!=u[i]):  
+            c+=1
 
-# print("Wrong Predictions = ",c)
-# print("Total Predictions = ",total)
-# print("Accuracy is = ",100 - (c/total * 100),"%")
+print("Wrong Predictions = ",c)
+print("Total Predictions = ",total)
+print("Accuracy is = ",100 - (c/total * 100),"%")
